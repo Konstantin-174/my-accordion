@@ -1,0 +1,16 @@
+.ratingWrap {
+  display: flex;
+  text-transform: uppercase;
+
+  .itemSelect {
+    margin: 10px;
+    font-weight: bold;
+    color: red;
+  }
+
+  .itemNotSelect {
+    margin: 10px;
+    font-weight: normal;
+    color: red;
+  }
+}
