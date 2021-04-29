@@ -1,5 +1,4 @@
 import React from 'react';
-import {Star} from './star/Star';
 
 export const Rating = () => {
     return (
@@ -10,5 +9,13 @@ export const Rating = () => {
             <Star/>
             <Star/>
         </section>
+    )
+}
+
+const Star = () => {
+    return (
+        <div>
+            Star
+        </div>
     )
 }
