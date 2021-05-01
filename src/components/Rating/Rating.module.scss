@@ -2,10 +2,22 @@
   display: flex;
   text-transform: uppercase;
 
+  .item {
+    padding: 5px;
+    border: 1px solid red;
+    border-radius: 3px;
+    transition: .3s;
+
+    &:hover {
+      opacity: 55%;
+    }
+  }
+
   .itemSelect {
     margin: 10px;
     font-weight: bold;
-    color: red;
+    color: white;
+    background-color: red;
   }
 
   .itemNotSelect {

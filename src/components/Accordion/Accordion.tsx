@@ -1,20 +1,33 @@
 import React from 'react';
-import local from "./Accordion.module.scss";
+import local from './Accordion.module.scss';
 
 type AccordionPropsType = {
     title: string
+    collapsed: boolean
 }
 
 export const Accordion = (props: AccordionPropsType) => {
-    return (
-        <section className={local.accordionWrap}>
-            <AccordionTitle title={props.title}/>
-            <AccordionBody />
-        </section>
-    )
+    if (props.collapsed) {
+        return (
+            <section className={local.accordionWrap}>
+                <AccordionTitle title={props.title}/>
+            </section>
+            )
+    } else {
+        return (
+            <section className={local.accordionWrap}>
+                <AccordionTitle title={props.title}/>
+                <AccordionBody/>
+            </section>
+        )
+    }
 }
 
-const AccordionTitle = (props: AccordionPropsType) => {
+type AccordionTitlePropsType = {
+    title: string
+}
+
+const AccordionTitle = (props: AccordionTitlePropsType) => {
     return (
         <h3 className={local.accordionTitle}>
             {props.title}
