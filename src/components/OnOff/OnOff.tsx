@@ -3,13 +3,15 @@ import local from "./OnOff.module.scss";
 
 export const OnOff = () => {
 
-    let [on, setOn] = useState(false)
+    const [on, setOn] = useState(false)
 
     const onStyle = {
-        backgroundColor: on ? "green" : "white"
+        backgroundColor: on ? "green" : "white",
+        color: on ? "white" : "black"
     }
     const offStyle = {
-        backgroundColor: on ? "white" : "red"
+        backgroundColor: on ? "white" : "red",
+        color: on ? "black" : "white"
     }
     const detectionStyle = {
         backgroundColor: on ? "green" : "red"

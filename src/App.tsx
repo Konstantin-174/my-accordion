@@ -8,10 +8,8 @@ function App() {
     return (
         <div className="App">
             <Accordion title="What will I do?"
-                       collapsed={true}
             />
             <Accordion title="What did I do?"
-                       collapsed={false}
             />
             <Rating value={0}/>
             <Rating value={1}/>

@@ -1,16 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import local from './Accordion.module.scss';
+import {GoListUnordered} from 'react-icons/go';
 
 type AccordionPropsType = {
     title: string
-    collapsed: boolean
 }
 
 export const Accordion = (props: AccordionPropsType) => {
+
+    const [compress, setCompress] = useState(true)
+
     return (
         <section className={local.accordionWrap}>
-            <AccordionTitle title={props.title}/>
-            { !props.collapsed && <AccordionBody /> }
+            <div className={local.titleWrap}>
+                <AccordionTitle title={props.title}/>
+                <GoListUnordered onClick={() => {
+                    setCompress(false)
+                }}/>
+            </div>
+            {!compress && <AccordionBody/>}
         </section>
     )
 }
