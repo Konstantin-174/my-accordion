@@ -1,0 +1,33 @@
+.btnsWrap {
+  margin-bottom: 5px;
+  display: flex;
+  margin-left: 50px;
+  text-transform: uppercase;
+  text-align: center;
+  align-items: center;
+
+  .btnOn {
+    width: 40px;
+    height: 25px;
+    border: 1px solid black;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .btnOff {
+    width: 40px;
+    height: 25px;
+    border: 1px solid black;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .detect {
+    display: block;
+    margin-left: 15px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 100%;
+  }
+}
