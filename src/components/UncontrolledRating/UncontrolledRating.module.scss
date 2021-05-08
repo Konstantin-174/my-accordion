@@ -1,0 +1,30 @@
+.ratingWrap {
+  display: flex;
+  text-transform: uppercase;
+
+  .item {
+    padding: 5px 5px 6px 5px;
+    border: 1px solid red;
+    border-radius: 3px;
+    transition: .3s;
+    line-height: 1;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 55%;
+    }
+  }
+
+  .itemSelect {
+    margin: 10px;
+    font-weight: bold;
+    color: white;
+    background-color: red;
+  }
+
+  .itemNotSelect {
+    margin: 10px;
+    font-weight: bold;
+    color: red;
+  }
+}

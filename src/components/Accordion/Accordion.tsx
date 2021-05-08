@@ -14,8 +14,8 @@ export const Accordion = (props: AccordionPropsType) => {
         <section className={local.accordionWrap}>
             <div className={local.titleWrap}>
                 <AccordionTitle title={props.title}/>
-                <GoListUnordered onClick={() => {
-                    setCompress(false)
+                <GoListUnordered className={local.btn} onClick={() => {
+                    setCompress(!compress)
                 }}/>
             </div>
             {!compress && <AccordionBody/>}
