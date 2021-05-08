@@ -1,35 +1,38 @@
-import React, {useState} from 'react';
+import React from 'react';
 import local from './Accordion.module.scss';
-import {GoListUnordered} from 'react-icons/go';
 
 type AccordionPropsType = {
     title: string
+    compress: boolean
+    onClick: (compress: boolean) => void
 }
 
 export const Accordion = (props: AccordionPropsType) => {
 
-    const [compress, setCompress] = useState(true)
 
     return (
         <section className={local.accordionWrap}>
             <div className={local.titleWrap}>
-                <AccordionTitle title={props.title}/>
-                <GoListUnordered className={local.btn} onClick={() => {
-                    setCompress(!compress)
-                }}/>
+                <AccordionTitle compress={props.compress}
+                                title={props.title}
+                                onClick={props.onClick}
+                />
             </div>
-            {!compress && <AccordionBody/>}
+            {!props.compress && <AccordionBody/>}
         </section>
     )
 }
 
 type AccordionTitlePropsType = {
     title: string
+    onClick: (compress: boolean) => void
+    compress: boolean
 }
 
 const AccordionTitle = (props: AccordionTitlePropsType) => {
+
     return (
-        <h3 className={local.accordionTitle}>
+        <h3 className={local.accordionTitle} onClick={() => {props.onClick(!props.compress)}}>
             {props.title}
         </h3>
     )
@@ -38,9 +41,9 @@ const AccordionTitle = (props: AccordionTitlePropsType) => {
 const AccordionBody = () => {
     return (
         <ul className={local.listWrap}>
-            <li className={local.listItem}>1</li>
-            <li className={local.listItem}>2</li>
-            <li className={local.listItem}>3</li>
+            <li className={local.listItem}>Mind</li>
+            <li className={local.listItem}>Wishes</li>
+            <li className={local.listItem}>Time</li>
         </ul>
     )
 }

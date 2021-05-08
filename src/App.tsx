@@ -1,25 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {Accordion} from './components/Accordion/Accordion';
 import {Rating} from './components/Rating/Rating';
 import {OnOff} from './components/OnOff/OnOff';
 import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
+import {UncontrolledAccordion} from './components/UncontrolledAccordion/UncontrolledAccordion';
+
+export type RatingValuesType =  0 | 1 | 2 | 3 | 4 | 5
 
 function App() {
+
+    const [value, setValue] = useState<RatingValuesType>(0)
+    const [compress, setCompress] = useState<boolean>(true)
+
     return (
         <div className={"App"}>
-            <Accordion title="What will I do?"
+
+            <Accordion title="Control your:"
+                       compress={compress}
+                       onClick={setCompress}
             />
-            <Accordion title="What did I do?"
+            <Rating value={value}
+                    onClick={setValue}
             />
-            {/*<Rating value={0}/>*/}
-            {/*<Rating value={1}/>*/}
-            {/*<Rating value={2}/>*/}
-            {/*<Rating value={3}/>*/}
-            {/*<Rating value={4}/>*/}
-            {/*<Rating value={5}/>*/}
+
+            <UncontrolledAccordion/>
             <UncontrolledRating/>
-            <OnOff />
             <OnOff />
         </div>
     );
